@@ -1,0 +1,45 @@
+{
+    "experiment": "mobilenetv2_full_dataset_stratified_split",
+    "model": "MobileNetV2",
+    "pretrained": true,
+    "backbone_frozen": true,
+    "dataset": {
+        "total_images": 7553,
+        "classes": [
+            "with_mask",
+            "without_mask"
+        ],
+        "class_to_idx": {
+            "with_mask": 0,
+            "without_mask": 1
+        }
+    },
+    "split": {
+        "type": "image_level_stratified",
+        "train_size": 5287,
+        "validation_size": 1133,
+        "test_size": 1133,
+        "random_seed": 42,
+        "test_fraction": 0.15,
+        "validation_fraction": 0.15
+    },
+    "training": {
+        "batch_size": 32,
+        "max_epochs": 20,
+        "best_epoch": 15,
+        "learning_rate": 0.0001,
+        "optimizer": "Adam",
+        "loss": "CrossEntropyLoss"
+    },
+    "metrics": {
+        "best_validation_accuracy": 0.9938217122683142,
+        "best_validation_loss": 0.02439063762718218,
+        "training_accuracy": 0.9950822772839039,
+        "validation_accuracy": 0.9938217122683142,
+        "test_accuracy": 0.9947043248014121,
+        "training_loss": 0.013971294160199153,
+        "validation_loss": 0.02439063762718218,
+        "test_loss": 0.022086174988466507
+    },
+    "original_dataset_modified": false
+}
